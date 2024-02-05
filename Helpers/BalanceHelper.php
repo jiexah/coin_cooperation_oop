@@ -1,6 +1,8 @@
 <?php
 
 class BalanceHelper {
+    const SOLUTION_SHARE = 'share';
+
     public function getCoinBalances(array $firstPersonSolutions, array $secondPersonSolutions): array
     {
         $firstPerson  = new Person();
@@ -18,7 +20,7 @@ class BalanceHelper {
     public function executeSolutions(array $solutions, Person $sharer, Person $receiver): void
     {
         foreach ($solutions as $solution) {
-            if ($solution == 'share') {
+            if ($solution === self::SOLUTION_SHARE) {
                 $sharer->share();
                 $receiver->receive();
             }

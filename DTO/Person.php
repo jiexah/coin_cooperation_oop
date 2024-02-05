@@ -1,13 +1,15 @@
 <?php
 
 Class Person {
+    const INITIAL_BALANCE = 3;
+
     private int $balance;
 
     private array $solutions;
 
     public function __construct()
     {
-        $this->balance = 3;
+        $this->balance = self::INITIAL_BALANCE;
     }
 
     public function getBalance(): int
